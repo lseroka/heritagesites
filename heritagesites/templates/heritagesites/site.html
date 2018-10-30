@@ -1,11 +1,11 @@
-{% extends 'heritagesites/base.html' %} <!--Lauren added this-->
+{% extends 'heritagesites/base.html' %} 
 {% block content %}
 <article>
   <header>
     <h2>UNESCO Heritage Sites</h2>
   </header>
 
-  {% include '< relative/path/to/pagination.html' %}
+ {% include 'heritagesites/pagination.html' %}
   
   {% if sites %}
   <ul>
