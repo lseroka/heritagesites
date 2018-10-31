@@ -15,12 +15,14 @@
 	    <!--Lauren added for loops-->
 	    {% for country in countries %}
 
-		<li><a href="{% url 'country_area_detail' country.pk %}">{{ country.country_area_name | safe }}</a></li>
+		<li>
+			<a href="{% url 'country_area_detail' country.pk %}">{{ country.country_area_name | safe }}</a>
+		</li>
 
 	    {% endfor %}
 
-
 	  </ul>
+	  
 	  {% else %}
 	  <p>No Heritage Sites are available to view.</p>
 	  {% endif %}
