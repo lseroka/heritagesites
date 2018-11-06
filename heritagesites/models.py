@@ -78,7 +78,7 @@ class HeritageSite(models.Model):
     site_name = models.CharField(unique=True, max_length=255)
     description = models.TextField()
     justification = models.TextField(blank=True, null=True)
-    date_inscribed = models.TextField(blank=True, null=True)  # This field type is a guess.
+    date_inscribed = models.IntegerField(blank=True, null=True)  # This field type is a guess.
     longitude = models.DecimalField(max_digits=11, decimal_places=8, blank=True, null=True)
     latitude = models.DecimalField(max_digits=10, decimal_places=8, blank=True, null=True)
     area_hectares = models.FloatField(blank=True, null=True)
