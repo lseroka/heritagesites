@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'heritagesites.apps.HeritagesitesConfig',
-    'social_django',                                                      
+    'crispy_forms',                                      
+    'social_django',
     'test_without_migrations',
 ]
 
@@ -156,3 +157,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 TEST_RUNNER = 'heritagesites.utils.UnManagedModelTestRunner'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

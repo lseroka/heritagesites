@@ -21,35 +21,28 @@
   <body>
 
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
-    <nav class="navbar navbar-expand-sm navbar-dark navbar-custom p-0">
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-custom sticky-top px-4 py-2">
 
-      <a class="navbar-brand" href="{% url 'home' %}">SI664 Heritage Sites</a>
-
-      <ul class="navbar-nav mr-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'sites' %}">Sites</a>
-        </li>
-
+      <div class="row">
+        <a class="navbar-brand" href="{% url 'home' %}">SI664 Heritage Sites</a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
           <li class="nav-item">
-          <a class="nav-link" href="{% url 'countries' %}">Countries/Areas</a>
-        </li>
-      </ul>
-
-<ul class="navbar-nav mr-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
-        </li>
-      </ul>
-
+            <a class="nav-link" href="{% url 'site' %}">Sites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'country_area' %}">Countries/Areas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <main>
+    <main class="px-4 py-3">
       <div class="container-fluid">
         <!--Lauren added this-->
         {% block content %}   
@@ -62,7 +55,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer class="px-4 py-2">
       <!--Lauren added proper email and name -->
       <p>Copyright &copy; 2018 <a href="mailto:lseroka@umich.edu">Lauren Seroka</a></p>
     </footer>
