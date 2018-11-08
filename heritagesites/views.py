@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 
-from .models import HeritageSite, CountryArea
+from .models import HeritageSite, CountryArea, HeritageSiteJurisdiction
 from .forms import HeritageSiteForm
 
 
