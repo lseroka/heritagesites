@@ -8,8 +8,9 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
-"""
 
+"""
+from mysite import secrets
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -19,8 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$^e)fw8%2o9rbp@12#6rx6m_wuv_4)5rrx=89qt4&y@gx7v+n_'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,9 +86,16 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',                                 # <-- Uncomment
 )
 
+# SECURITY WARNING: keep the secret key used in production secret!
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '222724871792-m3ff9s435q954htend37rspasvsg1jn6.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'FSmJa33d9PRth1kruZftaACS'
+
+
+SECRET_KEY = secrets.SECRET_KEY
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = secrets.SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = secrets.SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+
+
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 LOGIN_URL = '/auth/login/google-oauth2/'
