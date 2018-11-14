@@ -4,9 +4,13 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
+from django_filters.views import FilterView
 
 from .models import HeritageSite, CountryArea, HeritageSiteJurisdiction
 from .forms import HeritageSiteForm
+from .filters import HeritageSiteFilter
+
+
 
 
 def index(request):
@@ -168,3 +172,8 @@ class SiteDeleteView(generic.DeleteView):
 		self.object.delete()
 
 		return HttpResponseRedirect(self.get_success_url())
+
+
+class SiteFilterView(FilterView):
+	filterset_class = HeritageSiteFilter
+	template_name = 'heritagesites/site_filter.html'
