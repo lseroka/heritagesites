@@ -17,30 +17,30 @@ class HeritageSiteFilter(django_filters.FilterSet):
 	) 
 
 	category = django_filters.ModelChoiceFilter(
-		field_name='heritage_site__heritage_site_category__category_name',
+		field_name='heritage_site__heritage_site_category',
 		label = 'Heritage Site Category',
-		query_set = HeritageSiteCategory.objects.all().order_by('heritage_site_category__category_name'),
+		query_set = HeritageSiteCategory.objects.all().order_by('category_name'),
 		lookup_expr='exact'
 	)
 
 	region = django_filters.ModelChoiceFilter(
-		field_name='country_area__location__region__region_name',
+		field_name='country_area__location__region',
 		label = 'Region',
-		query_set = Region.objects.all().order_by('region__region_name'),
+		query_set = Region.objects.all().order_by('region_name'),
 		lookup_expr='exact'
 	)
 
 	sub_region = django_filters.ModelChoiceFilter(
-		field_name='country_area__location__sub_region__sub_region_name',
+		field_name='country_area__location__sub_region',
 		label = 'SubRegion',
-		query_set = SubRegion.objects.all().order_by('sub_region__sub_region_name'),
+		query_set = SubRegion.objects.all().order_by('sub_region_name'),
 		lookup_expr='exact'
 	)
 
 	intermediate_region = django_filters.ModelChoiceFilter(
-		field_name='country_area__location__intermediate_region__intermediate_region_name',
+		field_name='country_area__location__intermediate_region',
 		label = 'IntermediateRegion',
-		query_set = IntermediateRegion.objects.all().order_by('intermediate_region__intermediate_region_name'),
+		query_set = IntermediateRegion.objects.all().order_by('intermediate_region_name'),
 		lookup_expr='exact'
 	)
 
