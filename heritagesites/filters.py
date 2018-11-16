@@ -16,33 +16,33 @@ class HeritageSiteFilter(django_filters.FilterSet):
 		lookup_expr='icontains'
 	) 
 
-	# category = django_filters.ModelChoiceFilter(
-	# 	field_name='category_name',
-	# 	label = 'Heritage Site Category',
-	# 	query_set = HeritageSiteCategory.objects.all().order_by('category_name'),
-	# 	lookup_expr='exact'
-	# )
+	category = django_filters.ModelChoiceFilter(
+		field_name='category_name',
+		label = 'Heritage Site Category',
+		query_set = HeritageSiteCategory.objects.all().order_by('category_name'),
+		lookup_expr='exact'
+	)
 
-	# region = django_filters.ModelChoiceFilter(
-	# 	field_name='country_area__location__region__region_name',
-	# 	label = 'Region',
-	# 	query_set = Region.objects.all().order_by('region_name'),
-	# 	lookup_expr='exact'
-	# )
+	region = django_filters.ModelChoiceFilter(
+		field_name='country_area__location__region__region_name',
+		label = 'Region',
+		query_set = Region.objects.all().order_by('region_name'),
+		lookup_expr='exact'
+	)
 
-	# sub_region = django_filters.ModelChoiceFilter(
-	# 	field_name='country_area__location__sub_region__sub_region_name',
-	# 	label = 'SubRegion',
-	# 	query_set = SubRegion.objects.all().order_by('sub_region_name'),
-	# 	lookup_expr='exact'
-	# )
+	sub_region = django_filters.ModelChoiceFilter(
+		field_name='country_area__location__sub_region__sub_region_name',
+		label = 'SubRegion',
+		query_set = SubRegion.objects.all().order_by('sub_region_name'),
+		lookup_expr='exact'
+	)
 
-	# intermediate_region = django_filters.ModelChoiceFilter(
-	# 	field_name='country_area__location__intermediate_region__intermediate_region_name',
-	# 	label = 'IntermediateRegion',
-	# 	query_set = IntermediateRegion.objects.all().order_by('intermediate_region_name'),
-	# 	lookup_expr='exact'
-	# )
+	intermediate_region = django_filters.ModelChoiceFilter(
+		field_name='country_area__location__intermediate_region__intermediate_region_name',
+		label = 'IntermediateRegion',
+		query_set = IntermediateRegion.objects.all().order_by('intermediate_region_name'),
+		lookup_expr='exact'
+	)
 
 	country_area = django_filters.ModelChoiceFilter(
 		field_name='country_area',
