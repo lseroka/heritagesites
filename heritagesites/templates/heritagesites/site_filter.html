@@ -20,9 +20,9 @@
       </div>
     </div>
     <div class="col-sm-9">
-      {% for site in sites %}
+      {% for site in object_list %}
 
-        <h4><a href="{% url 'sites' sites.pk %}">{{ site.site_name | safe }}</a></h4>
+        <h4><a href="{% url 'site_detail' site.pk %}">{{ site.site_name | safe }}</a></h4>
 
         <!-- add the country_area_names and description template tags -->
 
