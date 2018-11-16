@@ -145,7 +145,7 @@ class HeritageSite(models.Model):
 
         regions = []
         for country in countries:
-            region = country.region_name
+            region = country.location.region.region_name
             if region is None:
                 continue
             if region not in regions:
@@ -173,7 +173,7 @@ class HeritageSite(models.Model):
 
             sub_regions = []
             for country in countries:
-                sub_region = country.sub_region_name
+                sub_region = country.location.sub_region.sub_region_name
                 if sub_region is None:
                     continue
                 if sub_region not in sub_regions:
@@ -202,7 +202,7 @@ class HeritageSite(models.Model):
 
             intermediate_regions = []
             for country in countries:
-                intermediate_region = country.intermediate_region_name
+                intermediate_region = location.intermediate_region.intermediate_region_name
                 if intermediate_region is None:
                     continue
                 if intermediate_region not in intermediate_regions:
