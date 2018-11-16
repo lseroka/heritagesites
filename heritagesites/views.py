@@ -3,8 +3,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy, resolve
 from django_filters.views import FilterView
+
 
 from .models import HeritageSite, CountryArea, HeritageSiteJurisdiction
 from .forms import HeritageSiteForm
