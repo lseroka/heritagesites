@@ -20,19 +20,33 @@
       </div>
     </div>
     <div class="col-sm-9">
-      {% for site in object_list %}
-        <h4><a href="{% url 'site' sites.pk %}">{{ site.site_name | safe }}</a></h4>
+      {% for site in sites %}
+
+        <h4><a href="{% url 'site_detail' sites.pk %}">{{ site.site_name | safe }}</a></h4>
 
         <!-- add the country_area_names and description template tags -->
 
-
-		{% if sites %}
-		        
-		        {{ site.country_area_names | safe }}
-		        {{ site.description | safe }}
-
-
+		   {% if site.country_area_name %}
+		    <div class="row">
+		      <div class="col-sm-2">
+		        <p>Country Area Names</p>
+		      </div>
+		      <div class="col-sm-10">
+		        {{ site.country_area_name | safe }}
+		      </div>
+		    </div>
 		  {% endif %}
+
+		    {% if site.description %}
+		       <div class="row">
+		         <div class="col-sm-2">
+		           <p>Description</p>
+		         </div>
+		         <div class="col-sm-10">
+		           {{ site.description | safe }}
+		         </div>
+		       </div>
+		     {% endif %}
 
 
     {% empty %}
