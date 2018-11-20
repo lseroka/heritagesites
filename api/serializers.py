@@ -246,3 +246,4 @@ class HeritageSiteSerializer(serializers.ModelSerializer):
 					.delete()
 
 		return instance
+		##
